@@ -1,0 +1,350 @@
+:root {
+    /* 
+        Color
+    */
+    --selective-yellow: hsl(42, 100%, 56%);
+    --roman-silver: hsl(240, 6%, 51%);
+    --roman-silver_10: hsla(240, 6%, 51%, 0.1);
+    --light-coral: hsl(357, 100%, 75%);
+    --oxford-blue: hsl(224, 53%, 10%);
+    --light-gray: hsl(0, 0%, 80%);
+    --keppei: hsl(173, 60%, 47%);
+    --white: hsl(0, 0%, 100%);
+    --black: hsl(0, 0%, 0%);
+    --black_10: hsla(0, 0%, 0%, 0.1);
+
+    /* 
+        Typo
+    */
+    --ff-gilroy: "Gilroy", sans-serif;
+
+    --headline-lg: 4.8rem;
+    --headline-md: 3rem;
+    --headline-sm: 2.4rem;
+    --title-lg: 2.2rem;
+    --title-md: 2rem;
+    --title-sm: 1.8rem;
+
+    --fw-500: 500;
+    --fw-600: 600;
+    --fw-700: 700;
+
+    /* 
+    spacing
+*/
+    --section-padding: 56px;
+
+    /* 
+    Shadow
+*/
+    --shadow-1: 0px 35px 65px -10px hsla(0, 0%, 0%, 0.05);
+    --shadow-2: 0 10px 40px hsla(0, 0%, 0%, 0.06);
+
+    /* 
+    Border
+*/
+    --radius-4: 4px;
+    --radius-6: 6px;
+    --radius-8: 8px;
+    --radius-circle: 50%;
+
+    /* 
+    Transition
+*/
+    --transition: 0.25s ease;
+    --cubic-in: cubic-bezier(0.51, 0.03, 0.64, 0.28);
+    --cubic-out: cubic-bezier(0.05, 0.83, 0.52, 0.97);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: var(--ff-gilroy);
+    background-color: var(--white);
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.overlay {
+    display: none;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.555);
+    z-index: 5;
+    transition: var(--transition);
+}
+
+.header {
+    position: relative;
+    width: 100%;
+    z-index: 10;
+}
+
+.header .menu {
+    width: 100%;
+    left: 0;
+    top: 0;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    justify-content: space-between;
+    color: var(--black);
+}
+
+.menu h1 {
+    font-weight: var(--fw-500);
+    font-size: var(--title-sm);
+}
+
+.menu h1 span {
+    font-weight: var(--fw-700);
+}
+
+.menu ion-icon {
+    font-size: var(--title-sm);
+    font-weight: var(--fw-500);
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: -80%;
+    top: 0;
+    background-color: var(--white);
+    width: 80%;
+    height: 100vh;
+    z-index: 20;
+    padding: 20px;
+    transition: var(--transition);
+}
+
+nav .nav-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.nav-top h1 {
+    font-weight: var(--fw-500);
+    color: var(--black);
+    font-size: var(--title-sm);
+}
+
+.nav-top span {
+    font-weight: var(--fw-700);
+}
+
+.nav-top ion-icon {
+    font-size: var(--title-sm);
+    font-weight: var(--fw-500);
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-links a {
+    font-size: 15px;
+    text-decoration: none;
+    color: var(--roman-silver);
+    padding: 5px 0;
+    width: 100%;
+    border-bottom: 1px solid var(--roman-silver_10);
+}
+
+.nav-links a:nth-last-child(1) {
+    border: none;
+}
+
+.page1 {
+    position: relative;
+    padding: 0px 20px;
+    padding-top: 7rem;
+    padding-bottom: 3rem;
+    width: 100%;
+    background-image: url("./assets/images/hero-bg.png");
+    background-position:center;
+    background-size: cover;
+}
+
+.page1 .content {
+    position: relative;
+}
+
+.content h1 {
+    font-size: 2.2rem;
+    font-weight: var(--fw-700);
+    line-height: 1.2;
+    color: var(--black);
+    margin-bottom: 20px;
+}
+
+.content h1 span {
+    color: var(--light-coral);
+}
+
+.content .desc {
+    border-left: 2px solid var(--light-coral);
+    padding: 3px 0px 3px 8px;
+    font-family: var(--ff-gilroy);
+    margin-bottom: 30px;
+}
+
+.desc p {
+    font-weight: var(--fw-500);
+    color: var(--roman-silver);
+    font-size: 15px;
+    letter-spacing: 0.5px;
+}
+
+.content .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn {
+    padding: 10px 15px;
+    font-size: 12px;
+    text-decoration: none;
+    border-radius: var(--radius-6);
+    color: var(--white);
+    font-weight: var(--fw-500);
+    letter-spacing: 0.5px;
+}
+
+.btn:nth-child(1) {
+    background-color: var(--light-coral);
+}
+
+.btn:nth-child(2) {
+    background-color: var(--black);
+}
+
+.page2 {
+    position: relative;
+    width: 100%;
+    padding: 3rem 20px;
+    background-image: url("./assets/images/category-bg.png");
+    background-position: center;
+    background-size: cover;
+}
+
+.page2 .p2-cont {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.p2-cont .upper-content {
+    position: relative;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.upper-content h4 {
+    color: var(--keppei);
+    font-size: 12px;
+    font-weight: var(--fw-600);
+    letter-spacing: 0.5px;
+    margin-bottom: 5px;
+}
+
+.upper-content h1 {
+    font-size: 22px;
+    white-space: nowrap;
+    font-weight: var(--fw-700);
+    color: var(--black);
+}
+
+.upper-content h1 span {
+    color: var(--light-coral);
+}
+
+.upper-content>span {
+    position: absolute;
+    display: block;
+    width: 45%;
+    height: 10px;
+    background-image: url("./assets/images/line-shape.svg");
+    background-position: center;
+    background-size: contain;
+    right: 0;
+    bottom: -7px;
+}
+
+.lower-content {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.lower-content .lis {
+    width: 100%;
+    height: 5.5rem;
+    background-color: var(--white);
+    border-radius: var(--radius-6);
+    padding: 8px 15px;
+    overflow: hidden;
+    display: flex;
+    gap: 13px;
+    align-items: center;
+    justify-content: start;
+}
+
+.lis .imgdiv {
+    width: 3.2rem;
+    height: 3.2rem;
+    flex-shrink: 0;
+    border-radius: var(--radius-4);
+}
+
+.lis .imgdiv img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.lis .text{
+    width: 100%;
+}
+
+.lis .text h4 {
+    font-size: 20px;
+    color: var(--black);
+    font-weight: var(--fw-700);
+    letter-spacing: 0.2px;
+    margin-bottom: 2px;
+}
+
+.lis .text p {
+    font-size: 12px;
+    color: var(--roman-silver);
+    letter-spacing: 0.5px;
+}
+
+.p2-cont .btn {
+    background-color: var(--light-coral);
+    letter-spacing: 0.5px;
+}
