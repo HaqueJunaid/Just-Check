@@ -16,6 +16,8 @@ close.addEventListener("click", function() {
 gsap.to('.header .menu', {
     backgroundColor: "white",
     boxShadow: "0px 10px 20px -10px rgba(124, 124, 124, 0.274)",
+    padding: "10px 20px",
+    ease: "linear.out",
     scrollTrigger: {
         trigger: ".header .menu",
         scroller: "body",

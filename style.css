@@ -77,7 +77,7 @@ body::-webkit-scrollbar {
     height: 100vh;
     position: fixed;
     background-color: rgba(0, 0, 0, 0.555);
-    z-index: 5;
+    z-index: 10;
     transition: var(--transition);
 }
 
@@ -94,7 +94,7 @@ body::-webkit-scrollbar {
     position: fixed;
     display: flex;
     align-items: center;
-    padding: 10px 20px;
+    padding: 20px;
     justify-content: space-between;
     color: var(--black);
 }
@@ -347,4 +347,153 @@ nav .nav-top {
 .p2-cont .btn {
     background-color: var(--light-coral);
     letter-spacing: 0.5px;
+}
+
+.page3 {
+    width: 100%;
+    position: relative;
+    padding: 3rem 20px;
+    background-color: #fff;
+    font-family: var(--ff-gilroy);
+}
+
+.p3-container {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.p3-container .banner-section {
+    width: 100%;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.p3-container .banner-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.text-section {
+    position: relative;
+    margin-bottom: 20px;
+}   
+
+.text-section h4 {
+    font-size: 15px;
+    color: var(--keppei);
+    font-weight: var(--fw-600);
+    letter-spacing: 0.5px;
+    margin-bottom: 15px;
+}
+
+.text-section h1 {
+    font-size: 26px;
+    font-weight: var(--fw-700);
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: var(--black);
+}
+
+.text-section h1 span {
+    color: var(--light-coral);
+    position: relative;
+}
+
+.text-section h1 span::after {
+    position: absolute;
+    content: "";
+    background-image: url("./assets/images/line-shape.svg");
+    width: 100%;
+    height: 10px;
+    background-position: center;
+    background-size: cover;
+    left: 0;
+    bottom: -5px;
+}
+
+.text-section p {
+    font-size: 16px;
+    line-height: 1.4;
+    letter-spacing: 0.5;
+    font-weight: var(--fw-500);
+    color: var(--roman-silver);
+}
+
+.progressBars {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+    position: relative;
+    width: 100%;
+}
+
+.progressBars .progressBar {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.progressBar .txt {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.txt h3 {
+    font-size: 15px;
+    font-weight: var(--fw-500);
+    color: var(--black);
+}
+
+.txt h4 {
+    font-size: 15px;
+    font-weight: var(--fw-500);
+}
+
+.bar {
+    width: 100%;
+    display: flex;
+}
+
+.bar input[type="range"] {
+    width: 100%;
+    height: 5px;
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: var(--black_10);
+}
+
+
+.bar input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    background-color: red;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+ }
+
+
+.progressBar:nth-child(1) .bar input[type="rnage"]::-moz-range-progress{
+    background-color: red;
+    color: yellow;
+}
+
+.progressBar:nth-child(2) .bar input[type="rnage"]::-moz-range-progress{
+    background-color: red;
+    color: yellow;
+}
+
+.progressBar:nth-child(3) .bar input[type="rnage"]::-moz-range-progress{
+    background-color: red;
+    color: yellow;
 }
