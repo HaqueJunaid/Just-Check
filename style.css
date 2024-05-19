@@ -210,26 +210,32 @@ nav .nav-top {
 
 .content .button {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
 }
 
 .btn {
+    display: inline-block;
     padding: 10px 15px;
-    font-size: 12px;
+    font-size: 15px;
     text-decoration: none;
     border-radius: var(--radius-6);
     color: var(--white);
-    font-weight: var(--fw-500);
+    font-weight: var(--fw-600);
     letter-spacing: 0.5px;
+    transition: var(--transition);
 }
 
 .btn:nth-child(1) {
     background-color: var(--light-coral);
+    margin-bottom: 10px;
 }
 
 .btn:nth-child(2) {
     background-color: var(--black);
+}
+
+.btn:hover {
+    box-shadow: 0px 0px 0px 2px #fff, 0px 0px 0px 4px var(--light-coral);
 }
 
 .page2 {
@@ -279,16 +285,16 @@ nav .nav-top {
     color: var(--light-coral);
 }
 
-.upper-content>span {
+.upper-content h1 span::after {
     position: absolute;
-    display: block;
-    width: 45%;
-    height: 10px;
+    content: "";
     background-image: url("./assets/images/line-shape.svg");
+    width: 100%;
+    height: 10px;
     background-position: center;
-    background-size: contain;
-    right: 0;
-    bottom: -7px;
+    background-size: cover;
+    left: 0;
+    bottom: -5px;
 }
 
 .lower-content {
@@ -311,6 +317,13 @@ nav .nav-top {
     gap: 13px;
     align-items: center;
     justify-content: start;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.lower-content .lis:hover {
+    border-left: 4px solid var(--light-coral);
+    box-shadow: var(--shadow-1);
 }
 
 .lis .imgdiv {
@@ -424,9 +437,7 @@ nav .nav-top {
 }
 
 .progressBars {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
+    display: grid;
     gap: 20px;
     position: relative;
     width: 100%;
@@ -448,52 +459,213 @@ nav .nav-top {
 
 .txt h3 {
     font-size: 15px;
-    font-weight: var(--fw-500);
-    color: var(--black);
+    font-weight: var(--fw-600);
+    color: var(--oxford-blue);
 }
 
 .txt h4 {
     font-size: 15px;
-    font-weight: var(--fw-500);
+    font-weight: var(--fw-600);
+    color: var(--oxford-blue);
 }
 
-.bar {
-    width: 100%;
-    display: flex;
-}
-
-.bar input[type="range"] {
+.barCont {
     width: 100%;
     height: 5px;
-    border: none;
-    outline: none;
-    -webkit-appearance: none;
-    appearance: none;
+    position: relative;
+}
+
+.barCont .bar {
+    width: 100%;
+    height: 5px;
     background-color: var(--black_10);
+    border-radius: var(--radius-8);
+    position: relative;
 }
 
-
-.bar input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none; /* Override default look */
-    appearance: none;
-    background-color: red;
-    height: 12px;
-    width: 12px;
-    border-radius: 50%;
- }
-
-
-.progressBar:nth-child(1) .bar input[type="rnage"]::-moz-range-progress{
-    background-color: red;
-    color: yellow;
+.progressBar .barCont .bar .progress {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: inline-block;
+    height: 100%;
+    border-radius: inherit;
 }
 
-.progressBar:nth-child(2) .bar input[type="rnage"]::-moz-range-progress{
-    background-color: red;
-    color: yellow;
+.progressBar:nth-child(1) .barCont .bar .progress {
+    width: 86%;
+    background-color: var(--light-coral);
 }
 
-.progressBar:nth-child(3) .bar input[type="rnage"]::-moz-range-progress{
+.progressBar:nth-child(2) .barCont .bar .progress {
+    width: 69%;
+    background-color: var(--keppei);
+}
+
+.progressBar:nth-child(3) .barCont .bar .progress {
+    width: 95%;
+    background-color: var(--selective-yellow);
+}
+
+.page4 {
+    padding: 3rem 20px;
+    background-image: url("./assets/images/course-bg.png");
+    background-position: center;
+    background-size: cover;
+    font-family: var(--ff-gilroy);
+}
+
+.p4-cont {
+    width: 100%;
+    text-align: center;
+}
+
+.p4-cont .upper-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.upper-content h1 {
+    font-size: var(--title-sm);
+    white-space: wrap;
+}
+
+.upper-content h1 span {
+    display: inline-block;
+    position: relative;
+}
+
+.p4-cont .upper-content h1 span::after {
+    position: absolute;
+    content: "";
+    background-image: url("./assets/images/line-shape.svg");
+    width: 100%;
+    height: 10px;
+    background-position: center;
+    background-size: cover;
+    left: 0;
+    bottom: -5px;
+}
+
+.coursesDiv {
+    display: grid;
+    gap: 20px;
+    position: relative;
+}
+
+.coursesDiv .course {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--white);
+    border-radius: var(--radius-8);
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.coursesDiv .course::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: var(--light-coral);
+    left: 0;
+    bottom: -10%;
+    transition: var(--transition);
+}
+
+.coursesDiv .course:hover {
+    box-shadow: var(--shadow-1);
+}
+
+.coursesDiv .course:hover::after {
+    bottom: 0;
+}
+
+.course .imgDiv {
+    width: 100%;
+    height: 8rem;
     background-color: red;
-    color: yellow;
+    border-radius: var(--radius-6);
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.course .imgDiv img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.aboutCourse {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    cursor: pointer;
+}
+
+.aboutCourse .rating {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.aboutCourse .rating h4 {
+    font-size: 15px;
+    color: var(--light-coral);
+    line-height: 1;
+    font-weight: var(--fw-600);
+}
+
+.rating .rate {
+    display: flex;
+    gap: 2px;
+}
+
+.rating .rate ion-icon {
+    font-size: 15px;
+    color: var(--selective-yellow);
+}
+
+.aboutCourse .courseName {
+    margin-bottom: 10px;
+}
+
+.aboutCourse .courseName h3{
+    text-align: left;
+    font-size: 20px;
+    color: var(--oxford-blue);
+}
+
+.aboutCourse .icons {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.aboutCourse .icons .ico {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.aboutCourse .icons .ico ion-icon {
+    font-size: 15px;
+    font-weight: 100;
+    color: var(--roman-silver);
+}
+
+.aboutCourse .icons .ico p {
+    font-size: 15px;
+    color: var(--roman-silver);
+    font-weight: var(--fw-500);
 }
