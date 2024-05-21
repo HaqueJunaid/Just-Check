@@ -226,7 +226,8 @@ nav .nav-top {
 }
 
 .btn {
-    display: inline-block;
+    display: block;
+    width: fit-content;
     padding: 10px 15px;
     font-size: 15px;
     text-decoration: none;
@@ -747,6 +748,8 @@ nav .nav-top {
     padding: 3rem 20px;
     position: relative;
     background-image: url(./assets/images/footer-bg.png);
+    background-position: center;
+    background-size: cover;
 }
 
 .footer-container {
@@ -969,8 +972,14 @@ nav .nav-top {
         font-size: 1.2rem;
     }
 
+    .page1 .button {
+
+        flex-direction: row;
+    }
+
     .btn{
         margin-right: 1rem;
+        display: inline-block;
         font-size: 20px;
         font-weight: var(--fw-600);
         padding: 15px 30px;
