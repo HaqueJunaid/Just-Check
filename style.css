@@ -566,10 +566,15 @@ nav .nav-top {
     bottom: -5px;
 }
 
+.p4-cont .btn {
+    background-color: var(--light-coral);
+}
+
 .coursesDiv {
     display: grid;
     gap: 20px;
     position: relative;
+    margin-bottom: 2rem;
 }
 
 .coursesDiv .course {
