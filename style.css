@@ -311,6 +311,7 @@ nav .nav-top {
 }
 
 .lower-content .lis {
+    position: relative;
     width: 100%;
     height: 5.5rem;
     background-color: var(--white);
@@ -325,9 +326,21 @@ nav .nav-top {
     cursor: pointer;
 }
 
+.lower-content .lis::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 100%;
+    background-color: var(--light-coral);
+    transition: var(--transition);
+}
+
+.lower-content .lis:hover::before {
+    width: 5px;
+}
+
 .lower-content .lis:hover {
-    border-left: 4px solid var(--light-coral);
-    box-shadow: var(--shadow-1);
+    box-shadow: var(--shadow-2);
 }
 
 .lis .imgdiv {
@@ -678,7 +691,7 @@ nav .nav-top {
     :root {
         --title-lg: 8rem;
         --title-md: 5rem;
-        --title-sm: 2rem;
+        --title-sm: 2.5rem;
     }
 
     .overlay {
@@ -773,7 +786,7 @@ nav .nav-top {
         font-size: 1.2rem;
     }
 
-    .page1 .p1-contianer .content .buttons .btn{
+    .btn{
         margin-right: 1rem;
         font-size: 20px;
         font-weight: var(--fw-600);
@@ -790,5 +803,205 @@ nav .nav-top {
         width: 100%;
         height: 100%;
         object-fit: contain;
+    }
+
+    .page2 {
+        width: 100%;
+        height: 100vh;
+        position: relative;
+        padding: 5rem 10rem;
+    }
+
+    .p2-cont {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .p2-cont .upper-content {
+        margin-bottom: 3rem;
+    }
+
+    .p2-cont .upper-content h4 {
+        font-size: 25px;
+    }
+
+    .p2-cont .upper-content h1 {
+        font-size: var(--title-sm);
+        color: var(--oxford-blue);
+    }
+
+    .p2-cont .lower-content {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(auto, 1fr);
+        gap: 1.5rem;
+    }
+
+    .p2-cont .lower-content .lis {
+        padding: 4rem 1.8rem;
+        gap: 1rem;
+    }
+
+    .p2-cont .lower-content .lis .imgdiv {
+        width: 5rem;
+        height: 5rem;
+    }
+
+    .p2-cont .lower-content .lis .text h4 {
+        font-size: 1.8rem;
+        color: var(--oxford-blue);
+        margin-bottom: 0.8rem;
+    }
+
+    .p2-cont .lower-content .lis .text p {
+        font-size: 1rem;
+        color: var(--oxford-blue);
+        margin-bottom: 0.8rem;
+    }
+
+    .page3 {
+        width: 100%;
+        padding: 0rem 10rem;
+        padding-top: 7rem;
+    }
+
+    .p3-container {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 100%;
+        align-items: start;
+        justify-content: space-between;
+    }
+
+    .p3-container .banner-section {
+        width: 50%;
+        height: 100%;
+    }
+
+    .textual {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 3rem 0;
+    }
+
+    .textual .text-section {
+        padding-left: 5rem;
+        padding-right: 5rem;
+        margin-bottom: var(--section-padding);
+    }
+
+    .textual .text-section h4 {
+        font-size: 25px;
+        margin-bottom: 10px;
+    }
+
+    .textual .text-section h1 {
+        font-size: var(--title-sm);
+        margin-bottom: 20px;
+        color: var(--oxford-blue);
+    }
+
+    .textual .text-section p {
+        font-size: 20px;
+    }
+
+    .progressBars {
+        display: flex;
+        flex-direction: column;
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
+
+    .progressBar {
+        margin-bottom: 1rem;
+    }
+
+    .progressBar .txt {
+        color: var(--oxford-blue);
+    }
+
+    .txt h3 {
+        font-size: 1.5rem;
+        font-weight: var(--fw-600);
+        color: var(--oxford-blue);
+    }
+
+    .txt h4 {
+        font-size: 1.5rem;
+        font-weight: var(--fw-600);
+        color: var(--oxford-blue);
+    }
+
+    .page4 {
+        width: 100%;
+        min-height: 100vh;
+        padding: 5rem 10rem;
+    }
+
+    .page4 .p4-cont {
+        width: 100%;
+        height: fit-content;
+    }
+
+    .p4-cont .upper-content {
+        margin-bottom: 3rem;
+    }
+
+    .p4-cont .upper-content h4 {
+        font-size: 25px;
+    }
+
+    .p4-cont .upper-content h1 {
+        font-size: var(--title-sm);
+        color: var(--oxford-blue);
+    }
+
+    .coursesDiv {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+    }
+
+    .coursesDiv .course {
+        height: 40vh;
+        padding: 1.5rem;
+    }
+
+    .course .imgDiv {
+        width: 100%;
+        height: 65%;
+    }
+
+    .course .aboutCourse .rating {
+        margin-bottom: 1rem;
+    }
+
+    .course .aboutCourse .rating h4{
+        font-size: 20px;
+    }
+
+    .course .aboutCourse .rating .rate ion-icon {
+        font-size: 20px;
+    }
+
+    .course .aboutCourse .courseName h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.4rem;
+        color: var(--oxford-blue);
+    }
+
+    .course .aboutCourse .icons .ico ion-icon,
+    .course .aboutCourse .icons .ico p {
+        font-size: 1.1rem;
+    }
+
+    .p4-cont .btn {
+        background-color: var(--light-coral);
     }
 }
